@@ -5,9 +5,12 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<link href="~/css/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/css/bootstrap-datepicker3.css" rel="stylesheet" />
+<script src="~/js/bootstrap-datepicker.js"></script>
+<script src="~/js/bootstrap-datepicker.no.min.js"></script>
 
-<h4>Booking</h4>
+<h4>Opprett Booking</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,7 +18,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Booking.UserEmail" class="control-label" hidden></label>
-                <input asp-for="Booking.UserEmail" value="@User.Identity.Name" class="form-control" readonly />
+                <input asp-for="Booking.UserEmail" value="@User.Identity.Name" class="form-control" readonly hidden />
                 <span asp-validation-for="Booking.UserEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -28,15 +31,22 @@
                 <input asp-for="Booking.EndDate" class="form-control" />
                 <span asp-validation-for="Booking.EndDate" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Booking.EquipmentID" class="control-label" hidden></label>
-                <input asp-for="Booking.EquipmentID" class="form-control" value="@Model.Equipment.ID" readonly />
+                <input asp-for="Booking.EquipmentID" class="form-control" value="@Model.Equipment.ID" readonly hidden />
             </div>
             <div class="form-group">
                 <input type="submit" value="Book" class="btn btn-primary" />
             </div>
         </form>
     </div>
+</div>
+
+<div class="input-daterange input-group" id="datepicker">
+    <input type="text" class="input-sm form-control" name="start" />
+    <span class="input-group-addon">til</span>
+    <input type="text" class="input-sm form-control" name="end" />
 </div>
 
 <div>
@@ -88,8 +98,19 @@ else
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 
-        <script src="~/lib/jquery.js"></script>
-        <script src="~/lib/jquery.validate.js"></script>
-        <script src="~/lib/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/jquery.js"></script>
+    <script src="~/lib/jquery.validate.js"></script>
+    <script src="~/lib/jquery.validate.unobtrusive.js"></script>
 
 }
+
+<script type="text/javascript">
+    $('#datepicker .input-daterange').datepicker({
+        format: "dd/mm/yyyy",
+        startDate: "DateTime.Now()",
+        maxViewMode: 2,
+        todayBtn: "linked",
+        language: "no",
+        datesDisabled: ['04/06/2021', '04/21/2021']
+    });
+</script>
