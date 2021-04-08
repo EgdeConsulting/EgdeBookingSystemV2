@@ -5,10 +5,15 @@
     ViewData["Title"] = "Create";
 }
 
-<link href="~/css/bootstrap-datepicker.css" rel="stylesheet" />
-<link href="~/css/bootstrap-datepicker3.css" rel="stylesheet" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="~/js/bootstrap-datepicker.js"></script>
 <script src="~/js/bootstrap-datepicker.no.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<link href="~/css/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/css/bootstrap-datepicker3.css" rel="stylesheet" />
+
 
 <h4>Opprett Booking</h4>
 <hr />
@@ -21,7 +26,7 @@
                 <input asp-for="Booking.UserEmail" value="@User.Identity.Name" class="form-control" readonly hidden />
                 <span asp-validation-for="Booking.UserEmail" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Booking.StartDate" class="control-label"></label>
                 <input asp-for="Booking.StartDate" class="form-control" />
                 <span asp-validation-for="Booking.StartDate" class="text-danger"></span>
@@ -30,7 +35,19 @@
                 <label asp-for="Booking.EndDate" class="control-label"></label>
                 <input asp-for="Booking.EndDate" class="form-control" />
                 <span asp-validation-for="Booking.EndDate" class="text-danger"></span>
+            </div>*@
+
+        <div class="input-daterange input-group" id="datepicker">
+
+            <div>
+                Fra: <input type="text" class="input-sm form-control"/>
+                <span asp-validation-for="Booking.StartDate" class="text-danger"></span>
             </div>
+            <div>
+                Til: <input type="text" class="input-sm form-control" name="end" />
+                <span asp-validation-for="Booking.EndDate" class="text-danger"></span>
+            </div>
+        </div>
 
             <div class="form-group">
                 <label asp-for="Booking.EquipmentID" class="control-label" hidden></label>
@@ -43,11 +60,7 @@
     </div>
 </div>
 
-<div class="input-daterange input-group" id="datepicker">
-    <input type="text" class="input-sm form-control" name="start" />
-    <span class="input-group-addon">til</span>
-    <input type="text" class="input-sm form-control" name="end" />
-</div>
+
 
 <div>
     <a asp-page="/UserView/Index">Tilbake til listen</a>
@@ -105,12 +118,13 @@ else
 }
 
 <script type="text/javascript">
-    $('#datepicker .input-daterange').datepicker({
+    $('#datepicker').datepicker({
         format: "dd/mm/yyyy",
         startDate: "DateTime.Now()",
         maxViewMode: 2,
         todayBtn: "linked",
         language: "no",
+        autoclose: true,
         datesDisabled: ['04/06/2021', '04/21/2021']
     });
 </script>
