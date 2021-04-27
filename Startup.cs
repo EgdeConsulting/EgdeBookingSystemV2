@@ -1,17 +1,16 @@
 using EgdeBookingSystemV2.Data;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.UI;
 
 namespace EgdeBookingSystemV2
 {
@@ -20,7 +19,7 @@ namespace EgdeBookingSystemV2
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-        
+
         }
 
         public IConfiguration Configuration { get; }
@@ -34,8 +33,19 @@ namespace EgdeBookingSystemV2
                     Configuration.GetConnectionString("EgdeBookingSystemConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<EgdeBookingSystemConnection>();
-            services.AddRazorPages();
 
+            services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+                .AddMicrosoftIdentityWebApp(Configuration.GetSection("AzureAd"));
+
+            services.AddControllersWithViews(options =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+                options.Filters.Add(new AuthorizeFilter(policy));
+            });
+            services.AddRazorPages()
+                 .AddMicrosoftIdentityUI();
 
         }
 
@@ -45,7 +55,7 @@ namespace EgdeBookingSystemV2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage(); 
+                app.UseDatabaseErrorPage();
                 app.UseBrowserLink();
             }
             else
@@ -65,6 +75,9 @@ namespace EgdeBookingSystemV2
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                  pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
