@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6+paJSCMBb8LWhs5fIrsjI2APwScJnFy6LYL/xOmmJfAZS05vCP1v1sQkcg1n1QMIzW5tX1Sy0o86h1eCaAWHQ==",
+  "dgSpecHash": "SrDH8+yJsdO0dA0ourt76s08gyvf87Rkbpv08taSxwwbzEauZnAvJ/W4C2JmB44GpYjqSySuf7kj+dzZTZRRKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nerga\\Bachelor\\backup\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
+  "projectFilePath": "C:\\Users\\nerga\\Bachelor\\Backup20210501\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nerga\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
     "C:\\Users\\nerga\\.nuget\\packages\\autofac.extras.moq\\6.0.0\\autofac.extras.moq.6.0.0.nupkg.sha512",

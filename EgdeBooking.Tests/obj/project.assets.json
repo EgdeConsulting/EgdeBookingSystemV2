@@ -10735,11 +10735,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nerga\\Bachelor\\backup\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\nerga\\Bachelor\\Backup20210501\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
       "projectName": "EgdeBooking.Tests",
-      "projectPath": "C:\\Users\\nerga\\Bachelor\\backup\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
+      "projectPath": "C:\\Users\\nerga\\Bachelor\\Backup20210501\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
       "packagesPath": "C:\\Users\\nerga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nerga\\Bachelor\\backup\\EgdeBookingSystemV2\\EgdeBooking.Tests\\obj\\",
+      "outputPath": "C:\\Users\\nerga\\Bachelor\\Backup20210501\\EgdeBookingSystemV2\\EgdeBooking.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nerga\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10756,8 +10756,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\nerga\\Bachelor\\backup\\EgdeBookingSystemV2\\EgdeBookingSystemV2\\EgdeBookingSystemV2.csproj": {
-              "projectPath": "C:\\Users\\nerga\\Bachelor\\backup\\EgdeBookingSystemV2\\EgdeBookingSystemV2\\EgdeBookingSystemV2.csproj"
+            "C:\\Users\\nerga\\Bachelor\\Backup20210501\\EgdeBookingSystemV2\\EgdeBookingSystemV2\\EgdeBookingSystemV2.csproj": {
+              "projectPath": "C:\\Users\\nerga\\Bachelor\\Backup20210501\\EgdeBookingSystemV2\\EgdeBookingSystemV2\\EgdeBookingSystemV2.csproj"
             }
           }
         }
