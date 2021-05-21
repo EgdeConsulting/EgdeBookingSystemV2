@@ -1,7 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+
+
     <style>
+        @*Overrider bootstrap logo posisjon*@
         .top-left {
             position: fixed;
             left: 20px;
@@ -32,6 +35,7 @@
                 @*NAV-Pages*@
        
                 <div class="collapse navbar-collapse" id="navbarColor01">
+                    @*Partial som brukes når brukeren er logget inn.*@
                     <partial name="_LoginPartial" />
 
                 </div>

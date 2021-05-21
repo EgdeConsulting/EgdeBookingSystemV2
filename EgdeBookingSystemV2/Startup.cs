@@ -28,12 +28,16 @@ namespace EgdeBookingSystemV2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            // Setter opp en kobling mot databasen.
             services.AddDbContext<EgdeBookingSystemConnection>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("EgdeBookingSystemConnection")));
+
+            // Setter opp innlogging med MS Identity.
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<EgdeBookingSystemConnection>();
+
+          
             services.AddRazorPages();
 
 
@@ -42,6 +46,7 @@ namespace EgdeBookingSystemV2
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

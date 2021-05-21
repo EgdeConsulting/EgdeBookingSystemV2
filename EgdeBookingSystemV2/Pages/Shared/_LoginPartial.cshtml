@@ -3,6 +3,7 @@
 @inject UserManager<IdentityUser> UserManager
 
 <style>
+    @*Overrider bootstrap logout posisjon.*@
     .logout-right {
         position: fixed;
         right: 20px;
@@ -11,13 +12,17 @@
     }
 </style>
 
+@*Blir vist om brukeren er logget inn.*@
 @if (SignInManager.IsSignedIn(User))
 {
+    @*Klikkbar logo*@
     <a href="/UserView/Index">
         <img width="160" src="https://egde.no/wp-content/uploads/2020/08/Egde-logo-clr-RGB.svg" />
         <a class="navbar-brand mb-1" href="/UserView/Index">Utlånssystem  </a>
 
     </a>
+
+    @*Navigasjonsbaren til en innlogget bruker.*@
     <div class="collapse navbar-collapse" id="navbarColor01">
 
         <ul class="navbar-nav mr-auto">
@@ -39,6 +44,7 @@
 
     </div>
 
+    @*Logg ut knapp.*@
     <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
 
         <button type="submit" class="btn btn-egde my-2 my-sm-0">Logg ut</button>
@@ -46,12 +52,12 @@
 
 
 }
+
+@*Logo og navigasjonsbar om bruker ikke er logget inn.*@
 else
 {
     <a>
         <img width="160" src="https://egde.no/wp-content/uploads/2020/08/Egde-logo-clr-RGB.svg" />
-        @*<h2 class="navbar-brand" href="/UserView/Index">Tech Space</h2>*@
-
     </a>
 
     <ul class="navbar-nav ">

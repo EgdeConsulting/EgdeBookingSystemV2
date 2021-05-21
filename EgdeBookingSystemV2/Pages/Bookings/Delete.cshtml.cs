@@ -10,15 +10,19 @@ using EgdeBookingSystemV2.Models;
 
 namespace EgdeBookingSystemV2.Pages.Bookings
 {
+    // Controller for Delete siden til 'Booking'.
     public class DeleteModel : PageModel
     {
+        // Databasekobling.
         private readonly EgdeBookingSystemV2.Data.EgdeBookingSystemConnection _context;
 
+        // Constructor til klassen. Oppretter context som tilkobling til databasen.
         public DeleteModel(EgdeBookingSystemV2.Data.EgdeBookingSystemConnection context)
         {
             _context = context;
         }
 
+        // Gir tilgang til bookingen som skal slettes.
         [BindProperty]
         public Booking Booking { get; set; }
 

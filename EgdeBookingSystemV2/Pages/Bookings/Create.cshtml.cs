@@ -18,7 +18,7 @@ namespace EgdeBookingSystemV2.Pages.Bookings
         // Databasekobling.
         private readonly EgdeBookingSystemV2.Data.EgdeBookingSystemConnection _context;
 
-        // Constructor til klassen. Oppretter context som tilkoblingen til databasen.
+        // Constructor til klassen. Oppretter context som tilkobling til databasen.
         public CreateModel(EgdeBookingSystemV2.Data.EgdeBookingSystemConnection context)
         {
             _context = context;

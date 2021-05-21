@@ -11,9 +11,10 @@ using System.Threading.Tasks;
 
 namespace EgdeBookingSystemV2
 {
+    // Kalles når programmet starter.
     public class Program
     {
-
+        // Main metode som kaller på initierende funksjonalitet ved oppstart av programmet.
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
@@ -23,15 +24,17 @@ namespace EgdeBookingSystemV2
             host.Run();
         }
 
+        // Setter opp en database om den ikke eksisterer.
         private static void CreateDbIfNotExists(IHost host)
         {
+
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 try
                 {
                     var context = services.GetRequiredService<EgdeBookingSystemConnection>();
-                    //context.Database.EnsureCreated();
+                    // Seeder databasen.
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
@@ -42,7 +45,7 @@ namespace EgdeBookingSystemV2
             }
         }
 
-
+        // Kaller på Startup fil.
         public static IHostBuilder CreateHostBuilder(string[] args) =>
              Host.CreateDefaultBuilder(args)
                  .ConfigureWebHostDefaults(webBuilder =>
