@@ -22,24 +22,6 @@ namespace EgdeBookingSystemV2.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Equipment> Equipments { get; set; }
         public DbSet<Location> Locations { get; set; }
-
-        //Dette er Eriks lille prosjekt som krangler med IdentityUsers. Kommer forhåpentligvis tilbake til løsning. 
-        //
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Booking>().ToTable("Booking");
-        //    modelBuilder.Entity<Category>().ToTable("Category");
-        //    modelBuilder.Entity<Equipment>().ToTable("Equipment");
-        //    modelBuilder.Entity<Location>().ToTable("Lacation");
-
-        //    modelBuilder.Entity<TUserRole>()
-        //    .HasKey(r => new { r.UserId, r.RoleId })
-        //    .ToTable("AspNetUserRoles");
-
-        //    modelBuilder.Entity<TUserLogin>()
-        //                .HasKey(l => new { l.LoginProvider, l.ProviderKey, l.UserId })
-        //                .ToTable("AspNetUserLogins");
-        //}
     }
 
 }

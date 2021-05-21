@@ -6,21 +6,23 @@
 }
 
 
-
+@*Sjekker om valgt booking intervall er opptatt eller ugyldig. Gir tilbakemelding hvis sant.*@
 @if ((string)TempData["BookingOpptatt"] == "Opptatt")
 {
     <div class="alert alert-danger mt-4">
         <strong>Booking feilet, utstyret er opptatt på valgt dato.</strong>
     </div>
-} else if ((string)TempData["BakoverITid"] == "Bakover")
+}
+else if ((string)TempData["BakoverITid"] == "Bakover")
 {
-<div class="alert alert-danger mt-4">
-    <strong>Booking feilet, velg dato frem i tid.</strong>
-</div>
+    <div class="alert alert-danger mt-4">
+        <strong>Booking feilet, velg dato frem i tid.</strong>
+    </div>
 }
 
 <h2 class="mt-4">Opprett booking</h2>
 
+@*Input felt for bookingen.*@
 <hr />
 <div class="row">
     <div class=" ">
@@ -48,6 +50,7 @@
                 <input asp-for="Booking.EquipmentID" class="form-control" value="@Model.Equipment.ID" readonly />
             </div>
 
+            @*Viser informasjonen til Utstyret som skal bookes.*@
             <dl class="row mx-1">
                 <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => model.Equipment.ID)
@@ -86,18 +89,12 @@
                     @Html.DisplayFor(model => model.Equipment.Location.Name)
                 </dd>
             </dl>
-
-
             <div class="form-group mx-4">
                 <input type="submit" value="Book" class="btn btn-egde-blå" />
             </div>
         </form>
     </div>
 </div>
-
-
-
-
 
 <div>
     <a asp-page="/UserView/Index">Tilbake til listen</a>
@@ -107,7 +104,7 @@
 
 </div>
 
-
+@*Gir oversikt over aktive bookinger av utstyret (hvis eksisterer).*@
 @if (Model.BookingList.Count != 0)
 {
     <div>

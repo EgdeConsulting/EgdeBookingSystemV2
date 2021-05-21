@@ -10730,19 +10730,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kanta\\.nuget\\packages\\": {}
+    "C:\\Users\\magnu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\magnu\\source\\repos\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
       "projectName": "EgdeBooking.Tests",
-      "projectPath": "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
-      "packagesPath": "C:\\Users\\Kanta\\.nuget\\packages\\",
-      "outputPath": "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystemV2\\EgdeBooking.Tests\\obj\\",
+      "projectPath": "C:\\Users\\magnu\\source\\repos\\EgdeBookingSystemV2\\EgdeBooking.Tests\\EgdeBooking.Tests.csproj",
+      "packagesPath": "C:\\Users\\magnu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\magnu\\source\\repos\\EgdeBookingSystemV2\\EgdeBooking.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Kanta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\magnu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10756,8 +10756,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystemV2\\EgdeBookingSystemV2\\EgdeBookingSystemV2.csproj": {
-              "projectPath": "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystemV2\\EgdeBookingSystemV2\\EgdeBookingSystemV2.csproj"
+            "C:\\Users\\magnu\\source\\repos\\EgdeBookingSystemV2\\EgdeBookingSystemV2\\EgdeBookingSystemV2.csproj": {
+              "projectPath": "C:\\Users\\magnu\\source\\repos\\EgdeBookingSystemV2\\EgdeBookingSystemV2\\EgdeBookingSystemV2.csproj"
             }
           }
         }
