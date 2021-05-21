@@ -13,6 +13,7 @@ namespace EgdeBookingSystemV2.Data
         {
         }
 
+        // Setter opp tabellene gitt av DbSet som tabeller i databasen. Reflekterer modellene i mappen models.
         public EgdeBookingSystemConnection(DbContextOptions<EgdeBookingSystemConnection> options)
             : base(options)
         {

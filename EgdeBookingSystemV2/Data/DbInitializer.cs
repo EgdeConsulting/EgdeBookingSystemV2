@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EgdeBookingSystemV2.Data
 {
+    // Seeding av databasen. Kalles på i Program.cs. Kun for testing. Kan fjernes etter behov.
     public class DbInitializer
     {
         public static void Initialize(EgdeBookingSystemConnection context)
